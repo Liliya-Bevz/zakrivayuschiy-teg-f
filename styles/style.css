@@ -14,7 +14,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: var(--content-weight);
+  font-variation-settings: "wght" var(--content-weight);
   background-image: var(--background-image);
   background-size: cover;
   display: flex;
@@ -79,7 +79,7 @@
   width: 100%;
   height: clamp(23.1875rem, 16.04rem + 30.52vw, 43.5rem);
   object-fit: cover;
-  object-position: right; 
+  object-position: right;
 }
 
 .wrapper:after {
@@ -161,14 +161,14 @@
 }
 
 .button span {
-  position: relative; 
+  position: relative;
   z-index: 1;
   color: white;
   mix-blend-mode: difference;
 }
 
 .button svg {
-  position: relative; 
+  position: relative;
   z-index: 1;
   color: white;
   mix-blend-mode: difference;
@@ -314,7 +314,7 @@
 
 .popup {
   position: fixed;
-  overflow: hidden; 
+  overflow: hidden;
   width: clamp(21.5625rem, 21.39rem + 0.75vw, 22.0625rem);
   display: flex;
   flex-direction: column;
