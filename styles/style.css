@@ -13,4 +13,355 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: var(--content-weight);
+  background-image: var(--background-image);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #000;
+}
+
+/* HEADER */
+
+.header {
+  width: var(--block-width);
+  height: clamp(20.4375rem, 19.54rem + 3.85vw, 23rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  border: var(--border);
+  margin: 100px 0;;
+}
+
+.title {
+  font-family: var(--accent-font);
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.subtitle {
+  font-family: var(--accent-font);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-transform: uppercase;
+}
+
+/* CARD */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: var(--block-width);
+  background-color: #fff;
+  border: var(--border);
+  font-family: var(--main-font);
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.card-title {
+  margin: 4px 10px;
+}
+
+.wrapper {
+  position: relative;
+  display: inline-block;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  height: clamp(23.1875rem, 16.04rem + 30.52vw, 43.5rem);
+  overflow: hidden;
+}
+
+.wrapper img {
+  width: 100%;
+  height: clamp(23.1875rem, 16.04rem + 30.52vw, 43.5rem);
+  object-fit: cover;
+  object-position: right; 
+}
+
+.wrapper:after {
+  content: '<HTML>';
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+  mix-blend-mode: hard-light;
+}
+
+@supports (text-stroke: 1px rgba(255, 255, 255, 1))  {
+  .wrapper:after  {
+    text-stroke: 1px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.card-content {
+  margin: 25px 25px 0;
+}
+
+/* FILTER */
+
+.grayscale {
+  filter: grayscale(70%);
+}
+
+.neon {
+  filter: saturate(250%);
+}
+
+.brightness {
+  filter: hue-rotate(30deg) brightness(80%);
+}
+
+.hue-rotate {
+  filter: hue-rotate(180deg) contrast(40%);
+}
+
+.sepia {
+  filter: sepia(100%);
+}
+
+.blur {
+  filter: blur(10px);
+}
+
+.combi-filter {
+   filter: blur(1px) hue-rotate(90deg) contrast(55%);
+}
+
+/* BUTTONS */
+
+.button {
+  position: relative;
+  padding-right: 20px;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 1);
+  transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.button span {
+  position: relative; 
+  z-index: 1;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+.button svg {
+  position: relative; 
+  z-index: 1;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.like_button {
+  display: flex;
+  align-self: end;
+  margin: 25px;
+  border: 2px solid transparent;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid rgba(0, 0, 0, 1);
+  transition:  border 0.3s ease;
+}
+
+.button__text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+}
+
+.card__like-button {
+  padding: 8px 37px;
+  background-color: #fff;
+  border: var(--border);
+}
+
+.save_button {
+  display: flex;
+  align-items: center;
+  width: clamp(19.375rem, 18.71rem + 2.82vw, 21.25rem);
+  margin-bottom: 100px;
+  background-color: #fff;
+  border: var(--border);
+  padding: 17px 20px;
+  justify-self: center;
+}
+
+.save__icon-button {
+  width: 21px;
+  height: 21px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.save__text-button {
+  padding: 0 0 0 8px;
+}
+
+.close-button {
+  background-color: #fff;
+  border: var(--border);
+  padding: 12.5px 132.5px;
+  margin-top: 30px;
+}
+
+/* LIKE ICON */
+
+.like-icon {
+  width: 39px;
+  height: 36px;
+  transform-origin: center
+}
+
+.like-icon .sparks {
+  opacity: 0;
+}
+
+.contour {
+  transition: fill 0.1s linear;
+}
+
+.like-icon .core {
+  fill: var(--transparent-color);
+  transition: fill 0.3s 0.03s linear;
+}
+
+.main-body {
+  transition: fill 0.3s linear;
+}
+
+.heart:hover .core{
+  fill:var(--contour-color);
+  transition: fill 0.3s 0s linear;
+}
+
+.like-icon:hover .main-body {
+  fill:var(--contour-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.heart:active .core{
+  fill:var(--animation-fill-color);
+  transition: fill 0.3s 0s linear;
+}
+
+.like-icon:active .main-body {
+  fill:var(--animation-fill-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .core{
+  fill:var(--animation-fill-color);
+  transition: fill 0.3s 0s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill:var(--animation-fill-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill:var(--animation-fill-color);
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .heart{
+  animation: scale 0.3s 0.1s ease-in;
+}
+
+.like-icon.is-liked .sparks {
+  animation: opacity 0.3s 0.3s ease-in;
+}
+
+/* POPUP */
+
+.popup {
+  display: none;
+  position: fixed;
+  overflow: hidden; 
+  width: clamp(21.5625rem, 21.39rem + 0.75vw, 22.0625rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border: none;
+  box-shadow: inset 0 0 0 var(--border);
+}
+
+.popup_content {
+  display: grid;
+  grid-template-columns: 39px 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.popup_icon {
+  width: 39px;
+  height: 39px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.popup_text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 150%;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.8);
+} 
+
+dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+} 
+
+@media (width < 376px) {
+  .save_button {
+    flex-direction: column;
+    align-items: center;
+  }
+  .save__text-button {
+    padding: 8px 0 0;
+  }
 }
