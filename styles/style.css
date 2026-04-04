@@ -94,8 +94,8 @@
   mix-blend-mode: hard-light;
 }
 
-@supports (text-stroke: 1px rgba(255, 255, 255, 1))  {
-  .wrapper:after  {
+@supports (text-stroke: 1px rgba(255, 255, 255, 1)) {
+  .wrapper:after {
     text-stroke: 1px rgba(255, 255, 255, 0.5);
   }
 }
@@ -267,7 +267,7 @@
   transition: fill 0.3s linear;
 }
 
-.heart:hover .core{
+.heart:hover .core {
   fill:var(--contour-color);
   transition: fill 0.3s 0s linear;
 }
@@ -277,7 +277,7 @@
   transition: fill 0.3s 0.05s linear;
 }
 
-.heart:active .core{
+.heart:active .core {
   fill:var(--animation-fill-color);
   transition: fill 0.3s 0s linear;
 }
@@ -287,7 +287,7 @@
   transition: fill 0.3s 0.05s linear;
 }
 
-.like-icon.is-liked .core{
+.like-icon.is-liked .core {
   fill:var(--animation-fill-color);
   transition: fill 0.3s 0s linear;
 }
@@ -302,7 +302,7 @@
   transition: fill 0.3s 0.06s linear;
 }
 
-.like-icon.is-liked .heart{
+.like-icon.is-liked .heart {
   animation: scale 0.3s 0.1s ease-in;
 }
 
@@ -313,7 +313,6 @@
 /* POPUP */
 
 .popup {
-  display: none;
   position: fixed;
   overflow: hidden; 
   width: clamp(21.5625rem, 21.39rem + 0.75vw, 22.0625rem);
