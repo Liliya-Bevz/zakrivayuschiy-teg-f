@@ -212,6 +212,7 @@
 .card__icon-button:focus-visible {
   border: 2px solid rgba(0, 0, 0, 1);
   transition:  border 0.3s ease;
+  height: 38px;
 }
 
 .button__text {
@@ -221,8 +222,10 @@
 }
 
 .card__icon-button {
+  display: flex;
   background-color: transparent;
   border: none;
+  padding: 0;
 }
 
 .card__like-button {
@@ -268,6 +271,7 @@
   width: 39px;
   height: 36px;
   transform-origin: center;
+  margin: auto;
 }
 
 .like-icon .sparks {
